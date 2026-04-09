@@ -1,1 +1,0 @@
-"# dolibarr-ex3d" 
