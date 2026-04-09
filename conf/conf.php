@@ -20,3 +20,4 @@ $dolibarr_main_prod='0';
 $dolibarr_main_force_https='1';
 $dolibarr_main_install_ok='1';
 $dolibarr_main_prod='1';
+$force_install_no_directory_lock=1;
