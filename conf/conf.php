@@ -1,10 +1,7 @@
 <?php
-// Configuración de Directorios
 $dolibarr_main_url_root='https://dolibarr-ex3d.onrender.com';
 $dolibarr_main_document_root='/var/www/html/htdocs';
 $dolibarr_main_data_root='/var/www/html/documents';
-
-// Configuración de Base de Datos (Supabase)
 $dolibarr_main_db_host='db.pflklctzvmttqdpprota.supabase.co';
 $dolibarr_main_db_port='6543';
 $dolibarr_main_db_name='postgres';
@@ -12,12 +9,4 @@ $dolibarr_main_db_user='postgres';
 $dolibarr_main_db_pass='AUREOX_2022';
 $dolibarr_main_db_type='pgsql';
 $dolibarr_main_db_character_set='utf8';
-$dolibarr_main_db_collation='utf8_general_ci';
-
-// Forzado de Instalación y Seguridad
-$force_install_no_directory_lock=1;
-$dolibarr_main_prod='0'; 
-$dolibarr_main_force_https='1';
 $dolibarr_main_install_ok='1';
-$dolibarr_main_prod='1';
-$force_install_no_directory_lock=1;
