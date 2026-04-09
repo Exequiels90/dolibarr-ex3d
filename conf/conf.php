@@ -11,3 +11,4 @@ $dolibarr_main_db_type='pgsql';
 $dolibarr_main_db_character_set='utf8';
 $dolibarr_main_install_ok='1';
 $dolibarr_main_prod='1';
+$force_install_no_directory_lock=1;
