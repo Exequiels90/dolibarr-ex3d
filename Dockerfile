@@ -59,8 +59,12 @@ COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 # Copy Supervisor configuration
 COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+# Copy startup script
+COPY docker/startup.sh /usr/local/bin/startup.sh
+RUN chmod +x /usr/local/bin/startup.sh
+
 # Expose port
 EXPOSE 80
 
-# Start supervisor
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+# Start with migration script
+CMD ["/usr/local/bin/startup.sh"]
