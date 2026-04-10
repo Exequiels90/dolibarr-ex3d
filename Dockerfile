@@ -1,10 +1,10 @@
-# Use PHP 8.2 FPM as base image
+# Use PHP 8.2 FPM as base image with pre-installed extensions
 FROM php:8.2-fpm-alpine
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Install system dependencies
+# Install minimal system dependencies
 RUN apk add --no-cache \
     nginx \
     supervisor \
@@ -13,26 +13,12 @@ RUN apk add --no-cache \
     zip \
     git \
     postgresql-dev \
-    libpng-dev \
-    oniguruma-dev \
-    libxml2-dev \
     libzip-dev \
-    libwebp-dev \
-    libjpeg-turbo-dev \
-    freetype-dev \
-    icu-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) \
     pdo \
     pdo_pgsql \
-    gd \
     zip \
-    exif \
-    bcmath \
-    intl \
-    opcache \
-    && pecl install redis \
-    && docker-php-ext-enable redis
+    bcmath
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
