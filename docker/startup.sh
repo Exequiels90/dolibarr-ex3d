@@ -2,11 +2,8 @@
 
 echo "Starting Ex3D Production Management System..."
 
-# Change to application directory
-cd /var/www/html
-
-# Run migrations and cache in one command
-php artisan migrate --force && php artisan config:cache
+# Run migrations and cache in one command with absolute paths
+cd /var/www/html && php artisan migrate --force && php artisan config:cache
 
 echo "Starting services..."
 
