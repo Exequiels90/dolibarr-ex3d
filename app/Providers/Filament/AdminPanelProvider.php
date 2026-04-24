@@ -46,7 +46,7 @@ class AdminPanelProvider extends PanelProvider
                 'Pedidos y Cola',
                 'Sistema',
             ])
-            ->discoverResources(in: app_path('Filament/Resources'))
+            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament')
             ->discoverPages(in: app_path('Filament/Pages'))
             ->pages([
                 Pages\Dashboard::class,
