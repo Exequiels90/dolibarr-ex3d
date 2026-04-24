@@ -28,12 +28,13 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy application files
 COPY . /var/www/html
 
-# Create storage directories
+# Create storage and log directories
 RUN mkdir -p /var/www/html/storage \
     && mkdir -p /var/www/html/bootstrap/cache \
     && mkdir -p /var/www/html/storage/framework/sessions \
     && mkdir -p /var/www/html/storage/framework/views \
-    && mkdir -p /var/www/html/storage/framework/cache
+    && mkdir -p /var/www/html/storage/framework/cache \
+    && mkdir -p /var/log/supervisor
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \
