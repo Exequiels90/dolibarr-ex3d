@@ -59,6 +59,9 @@ COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY docker/startup.sh /usr/local/bin/startup.sh
 RUN chmod +x /usr/local/bin/startup.sh
 
+# Force cache invalidation
+RUN echo "Updated startup script with cd /var/www/html"
+
 # Expose port
 EXPOSE 80
 
