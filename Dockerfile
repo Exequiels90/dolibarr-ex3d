@@ -14,11 +14,13 @@ RUN apk add --no-cache \
     git \
     postgresql-dev \
     libzip-dev \
+    icu-dev \
     && docker-php-ext-install -j$(nproc) \
     pdo \
     pdo_pgsql \
     zip \
-    bcmath
+    bcmath \
+    intl
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
