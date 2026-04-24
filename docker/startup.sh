@@ -2,8 +2,8 @@
 
 echo "Starting Ex3D Production Management System..."
 
-# Run migrations and cache in one command with absolute paths
-cd /var/www/html && php artisan migrate --force && php artisan config:cache
+# Run migrations and cache with full absolute paths
+/var/www/html/artisan migrate --force && /var/www/html/artisan config:cache
 
 echo "Starting services..."
 
