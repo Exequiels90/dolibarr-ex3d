@@ -2,8 +2,13 @@
 
 echo "Starting Ex3D Production Management System..."
 
-# Run migrations and cache with full absolute paths
-/var/www/html/artisan migrate --force && /var/www/html/artisan config:cache
+# Try to run migrations but continue if database is not available
+echo "Attempting database migration..."
+/var/www/html/artisan migrate --force || echo "Migration skipped - database not available"
+
+# Cache configuration
+echo "Caching configuration..."
+/var/www/html/artisan config:cache
 
 echo "Starting services..."
 
